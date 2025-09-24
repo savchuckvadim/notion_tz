@@ -1,10 +1,13 @@
-'use client';
+"use client";
 
 import { ThemeProvider } from "@/modules/shared/theme";
 
-
-export function App({ children }: { children: React.ReactNode }) {
-    return <ThemeProvider>{
-        children
-    }</ThemeProvider>;
+export function App({
+    children,
+    scheme,
+}: {
+    children: React.ReactNode;
+    scheme?: any;
+}) {
+    return <ThemeProvider>{children}</ThemeProvider>;
 }
