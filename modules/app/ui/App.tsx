@@ -9,5 +9,5 @@ export function App({
     children: React.ReactNode;
     scheme?: any;
 }) {
-    return <ThemeProvider>{children}</ThemeProvider>;
+    return <>{children}</>;
 }
