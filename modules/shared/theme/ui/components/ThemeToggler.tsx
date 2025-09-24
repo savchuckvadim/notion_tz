@@ -10,16 +10,18 @@ export const ThemeToggler = () => {
     const { theme, setTheme } = useTheme();
     const { scheme, setScheme } = useColorScheme();
     const toggleTheme = () => {
+        debugger;
         setTheme(theme === "dark" ? "light" : "dark");
     };
 
     const memoizedsetScheme = useCallback(
         (scheme: ColorScheme) => {
+            debugger;
             setScheme(scheme);
         },
         [setScheme],
     );
-
+    debugger;
     return (
         <div className="flex items-center gap-1 text-foreground">
             <button

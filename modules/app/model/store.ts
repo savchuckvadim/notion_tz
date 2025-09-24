@@ -1,4 +1,10 @@
-import { Action, configureStore, createListenerMiddleware, Middleware, ThunkAction } from "@reduxjs/toolkit";
+import {
+    Action,
+    configureStore,
+    createListenerMiddleware,
+    Middleware,
+    ThunkAction,
+} from "@reduxjs/toolkit";
 import { combineReducers } from "@reduxjs/toolkit";
 import { appReducer } from "./slice/AppSlice";
 
@@ -9,11 +15,11 @@ const rootReducer = combineReducers({
 });
 
 // Middleware для обработки ошибок
-const errorMiddleware: Middleware = storeAPI => next => action => {
+const errorMiddleware: Middleware = (storeAPI) => (next) => (action) => {
     try {
         return next(action);
     } catch (error) {
-        console.error('Redux Error:', error);
+        console.error("Redux Error:", error);
         // Обрабатываем ошибку через ErrorHandler
         // errorHandler.handleAsyncError(error);
         return next(action);
@@ -23,11 +29,10 @@ const errorMiddleware: Middleware = storeAPI => next => action => {
 export const setupStore = () => {
     return configureStore({
         reducer: rootReducer,
-        middleware: getDefaultMiddleware =>
+        middleware: (getDefaultMiddleware) =>
             getDefaultMiddleware()
                 .concat(errorMiddleware)
                 .concat(listenerMiddleware.middleware),
-
     });
 };
 
@@ -41,8 +46,7 @@ export type AppThunk<ReturnType = void> = ThunkAction<
 
 export type RootState = ReturnType<typeof rootReducer>;
 export type AppStore = ReturnType<typeof setupStore>;
-export type AppDispatch = AppStore['dispatch'];
-export type AppGetState = AppStore['getState'];
+export type AppDispatch = AppStore["dispatch"];
+export type AppGetState = AppStore["getState"];
 
 export const store = setupStore();
-

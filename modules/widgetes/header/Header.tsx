@@ -1,5 +1,6 @@
 "use client";
 
+import { Navigation } from "@/modules/widgetes/navigation/Navigation";
 import { ThemeToggler } from "@/modules/shared/theme";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -19,15 +20,18 @@ export function Header() {
                         <div className="flex items-center space-x-3">
                             <Link
                                 href="/home"
-                                className="text-xl font-semibold text-primary-foreground hover:text-blue-600 transition-colors"
+                                className="text-xl font-semibold text-primary hover:text-blue-600 transition-colors"
                             >
                                 Notion
                             </Link>
                         </div>
 
-                        {/* Навигация */}
-                        {/* <NavMenu /> */}
-                        <div className="flex items-center space-x-2">
+                        <div className="flex items-center space-x-2 w-full justify-end">
+                            {/* Навигация */}
+                            <div className="w-full">
+                                <Navigation />
+                            </div>
+
                             {isClient && (
                                 <>
                                     {" "}

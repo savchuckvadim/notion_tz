@@ -1,7 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { initAppThunk } from "./AppThunk";
 
-
 const initialState = {
     isLoading: false,
     isInitialized: false,
@@ -18,7 +17,6 @@ const appSlice = createSlice({
         });
         builder.addCase(initAppThunk.pending, (state, action) => {
             state.isLoading = true;
-
         });
         builder.addCase(initAppThunk.rejected, (state, action) => {
             state.isLoading = false;
@@ -26,7 +24,5 @@ const appSlice = createSlice({
         });
     },
 });
-
-
 
 export const appReducer = appSlice.reducer;
