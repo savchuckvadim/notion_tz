@@ -25,7 +25,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scrollbar-hide" suppressHydrationWarning>
+    <html lang="en" className="scrollbar-hide" suppressHydrationWarning data-theme="system">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background`}
       >

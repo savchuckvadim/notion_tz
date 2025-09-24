@@ -31,7 +31,7 @@ export function Header() {
                     {/* Навигация */}
                     {/* <NavMenu /> */}
                     <div className="flex items-center space-x-2">
-                        {isClient && <ThemeToggler />}
+                        {isClient && <> <ThemeToggler /> </>}
                     </div>
                 </div>
 

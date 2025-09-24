@@ -45,8 +45,9 @@ export const ThemeProvider = ({
     }, [isMounted]);
 
     useEffect(() => {
+        
         if (isMounted) {
-            const className = `${scheme}-${theme}`;
+            const className = `${scheme}-${theme || 'dark'}`;
             document.documentElement.classList.remove(
                 ...ColorSchemes.flatMap(s => [`${s}-light`, `${s}-dark`]),
             );

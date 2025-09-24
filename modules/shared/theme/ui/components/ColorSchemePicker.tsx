@@ -1,8 +1,7 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useState, useRef, memo } from 'react';
 import { Palette } from 'lucide-react';
-import { useColorScheme } from '../../hook/useColorScheme';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useOutsideClick } from '../../hook/useOutsideClick';
 import { ColorScheme } from '../../provider/Theme';
@@ -14,14 +13,17 @@ const schemeList = [
     { value: 'beige', color: '#ffeacf' },
 ];
 
-export const ColorSchemePicker = () => {
-    const { scheme, setScheme } = useColorScheme();
+export const ColorSchemePicker = memo(({ scheme, setScheme }: { scheme: ColorScheme, setScheme: (scheme: ColorScheme) => void }) => {
+
+
     const [open, setOpen] = useState(false);
     const ref = useRef<HTMLDivElement>(null);
 
     useOutsideClick(ref, () => setOpen(false));
 
     return (
+
+
         <div className="relative" ref={ref}>
             <button
                 className="cursor-pointer hover:text-primary text-foreground p-2 rounded-md hover:bg-muted transition"
@@ -46,6 +48,7 @@ export const ColorSchemePicker = () => {
                                 className={`cursor-pointer w-8 h-8 rounded-full border-2 ${scheme === value ? 'ring-2 ring-foreground' : ''}`}
                                 style={{ backgroundColor: color }}
                                 onClick={() => {
+                                    
                                     setScheme(value as ColorScheme);
                                     setOpen(false);
                                 }}
@@ -56,4 +59,6 @@ export const ColorSchemePicker = () => {
             </AnimatePresence>
         </div>
     );
-};
+
+});
+
