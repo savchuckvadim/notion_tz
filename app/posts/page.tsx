@@ -2,13 +2,12 @@
 
 // Server-Side Rendering (SSR) - каждый запрос тянет новые данные
 
+import { getPosts } from "@/modules/entties/posts/lib/getPosts";
 import { PostsPage } from "@/modules/pages";
 
 export default async function Posts() {
-    const res = await fetch("https://jsonplaceholder.typicode.com/posts", {
-        cache: "no-store", // отключаем кэш → SSR
-    });
-    const posts = await res.json();
+
+    const posts = await getPosts({ cache: false });
 
     return <PostsPage posts={posts} />;
 }
