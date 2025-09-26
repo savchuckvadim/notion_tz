@@ -1,9 +1,10 @@
 "use client";
 
 import { Navigation } from "@/modules/widgetes/navigation/Navigation";
-import { ThemeToggler } from "@/modules/shared/theme";
+import { ThemeToggler } from "@/modules/shared/ui/theme";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { appData } from "@/data";
 
 export function Header() {
     const [isClient, setIsClient] = useState(false);
@@ -19,10 +20,10 @@ export function Header() {
                         {/* Логотип */}
                         <div className="flex items-center space-x-3">
                             <Link
-                                href="/home"
+                                href="/"
                                 className="text-xl font-semibold text-primary hover:text-blue-600 transition-colors"
                             >
-                                Notion
+                                {appData.general.brand}
                             </Link>
                         </div>
 

@@ -35,7 +35,7 @@ export default function RootLayout({
                         <div className="fixed top-0 left-0 w-full bg-background z-50 h-[46px]">
                             <Header />
                         </div>
-                        <div className="h-calc(100vh-46px) w-full">
+                        <div className="h-calc(100vh-192px) w-full">
                             {children}
                         </div>
                         <Footer />

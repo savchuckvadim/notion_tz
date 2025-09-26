@@ -20,7 +20,11 @@
         ],
         "baseUrl": ".",
         "paths": {
-            "@/*": ["./*"]
+            "@/*": ["./*"],
+            "@/lib/*": ["./modules/shared/shadcn/lib/*"],
+            "@/components/*": ["./modules/shared/shadcn/components/*"],
+            "@/hooks/*": ["./modules/shared/shadcn/hooks/*"],
+            "@/ui/*": ["./modules/shared/shadcn/components/ui/*"]
         }
     },
     "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
