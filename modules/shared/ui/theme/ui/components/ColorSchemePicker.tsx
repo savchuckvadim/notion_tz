@@ -51,7 +51,7 @@ export const ColorSchemePicker = memo(
                                     className={`cursor-pointer w-8 h-8 rounded-full border-2 ${scheme === value ? "ring-2 ring-foreground" : ""}`}
                                     style={{ backgroundColor: color }}
                                     onClick={() => {
-                                        debugger;
+
                                         setScheme(value as ColorScheme);
                                         setOpen(false);
                                     }}

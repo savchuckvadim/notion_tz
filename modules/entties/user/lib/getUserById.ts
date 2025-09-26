@@ -1,9 +1,9 @@
 import { IUser } from "../type/user.type";
+import { getUsers } from "./getUsers";
 
 export const getUserById = async (id: number): Promise<IUser> => {
-    const res = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`, {
-        next: { revalidate: 10 }, // 🔑 раз в 10 сек пересборка
-    });
-    const user = await res.json() as IUser;
+    const users = await getUsers();
+    const user = users.find((user: IUser) => user.id === id) as IUser;
+    debugger
     return user;
 }

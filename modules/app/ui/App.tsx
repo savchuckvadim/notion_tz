@@ -10,7 +10,7 @@ export function App({
     children: React.ReactNode;
     scheme?: any;
 }) {
-    const { isInitialized, isLoading, currentUserId } = useApp();
+    const { isInitialized, isLoading} = useApp();
     if (isLoading) {
         return <Preloader />
     }

@@ -1,12 +1,10 @@
-import { initAppThunk } from "@/modules/app/model/thunk/AppThunk";
-import { RootState } from "@/modules/app/model/store";
 import { isAnyOf, ListenerMiddlewareInstance } from "@reduxjs/toolkit";
-import { fetchPostsThunk } from "./PostsThunk";
+import { initAppThunk } from "@/modules/app/model/thunk/AppThunk";
+import { getCurrentUserThunk } from "./UserThunk";
+import { RootState } from "@/modules/app/model/store";
 
 
-export function setupPostsAppListener(
-    listenerMiddleware: ListenerMiddlewareInstance,
-) {
+export const setupUserAppListener = (listenerMiddleware: ListenerMiddlewareInstance) => {
     listenerMiddleware.startListening({
         matcher: isAnyOf(
             initAppThunk.fulfilled
@@ -15,11 +13,9 @@ export function setupPostsAppListener(
             const { dispatch, getState } = listenerApi;
             const state = getState() as RootState;
             const app = state.app;
-            debugger
             if (app.isInitialized && !app.isLoading && app.currentUserId) {
-                dispatch(fetchPostsThunk(app.currentUserId));
+                dispatch(getCurrentUserThunk(app.currentUserId));
             }
-
         },
     });
 }

@@ -7,11 +7,20 @@ import {
 } from "@reduxjs/toolkit";
 import { combineReducers } from "@reduxjs/toolkit";
 import { appReducer } from "./slice/AppSlice";
+import { postsReducer } from "@/modules/entties/posts/";
+import { userReducer } from "@/modules/entties/user/";
+import { todosReducer } from "@/modules/entties/todos/";
+import { startStoreListeners } from "./listeners/start-store-listeners";
+import { statisticsReducer } from "@/modules/features";
 
 export const listenerMiddleware = createListenerMiddleware();
-
+startStoreListeners(listenerMiddleware);
 const rootReducer = combineReducers({
     app: appReducer,
+    posts: postsReducer,
+    user: userReducer,
+    todos: todosReducer,
+    statistics: statisticsReducer,
 });
 
 // Middleware для обработки ошибок

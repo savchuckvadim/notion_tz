@@ -43,7 +43,7 @@ export const appRoutingDataItems: IAppDataItem[] = [
         title: "Dashboard",
         description: "Dashboard page",
         task: "Dashboard page - CSR - данные только после загрузки React на клиенте",
-        taskDiscription: "Dashboard page - CSR - данные только после загрузки React на клиенте",
+        taskDiscription: "В модуле статистика осуществлен паттерн Listener c помощью Redux Toolkit",
         type: "CSR",
         image: "/images/dashboard.png",
         link: "/dashboard",

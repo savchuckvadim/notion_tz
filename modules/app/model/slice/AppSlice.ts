@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { initAppThunk } from "./AppThunk";
+import { initAppThunk } from "../thunk/AppThunk";
 
 const initialState = {
     isLoading: false,
@@ -16,7 +16,7 @@ const appSlice = createSlice({
             state.currentUserId = action.payload;
             state.isInitialized = true;
             state.isLoading = false;
-            debugger
+
         });
         builder.addCase(initAppThunk.pending, (state, action) => {
             state.isLoading = true;

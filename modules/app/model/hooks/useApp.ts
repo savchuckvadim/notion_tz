@@ -1,17 +1,36 @@
-import { initAppThunk } from "../slice/AppThunk";
+"use client";
+import { useInClient } from "@/modules/shared/is-client/useInClient";
+import { initAppThunk } from "../thunk/AppThunk";
 import { useAppDispatch, useAppSelector } from "./redux";
 import { useEffect } from "react";
+import { store } from "../store";
 
 export const useApp = () => {
     const dispatch = useAppDispatch();
     const selector = useAppSelector((state) => state.app);
+    const isClient = useInClient();
 
     useEffect(() => {
-        debugger
-        if (!selector.isInitialized && !selector.isLoading) {
+        if (isClient) {
+
+            if (typeof window !== 'undefined') {
+
+                (window as any).store = store;
+            }
+        }
+
+    }, [isClient]);
+
+    useEffect(() => {
+
+        if (isClient && !selector.isInitialized && !selector.isLoading) {
             dispatch(initAppThunk());
         }
-    }, [selector.isInitialized, selector.isLoading]);
+    }, [isClient, selector.isInitialized, selector.isLoading]);
 
-    return { ...selector, initAppThunk: () => dispatch(initAppThunk()) };
+    return {
+        ...selector,
+
+        initAppThunk: () => dispatch(initAppThunk())
+    };
 };
