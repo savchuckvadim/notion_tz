@@ -1,15 +1,12 @@
-import { appData, getHomePageData, getUsersPageData } from "@/data";
+import { UseDataTypeEnum } from "@/data";
 import { IUser, Users } from "@/modules/entties";
-import { PageDescription, PageTitle } from "@/modules/shared";
+import { PageLayout } from "@/modules/shared";
 
 
 export function UsersPage({ users, postsCounts }: { users: IUser[], postsCounts: { userId: number, count: number }[] }) {
     return (
-        <>
-            <PageTitle title={getUsersPageData()?.description || ''} />
-            <PageDescription description={getUsersPageData()?.task} size="lg" />
-            <PageDescription description={getUsersPageData()?.taskDiscription} size="xs" />
+        <PageLayout type={UseDataTypeEnum.USERS}>
             <Users users={users} postsCounts={postsCounts} />
-        </>
+        </PageLayout>
     );
 }

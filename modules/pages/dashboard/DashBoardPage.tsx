@@ -1,7 +1,8 @@
+import { UseDataTypeEnum } from "@/data";
+import { PageLayout } from "@/modules/shared";
+
 export const DashBoardPage = () => {
-    return (
-        <div>
-            <h1>Dashboard</h1>
-        </div>
-    )
+    return <PageLayout type={UseDataTypeEnum.DASHBOARD}>
+        <p>Dashboard</p>
+    </PageLayout>;
 }

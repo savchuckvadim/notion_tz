@@ -1,14 +1,11 @@
-import { appData, getHomePageData } from "@/data";
+import { appData, getHomePageData, UseDataTypeEnum } from "@/data";
 import { HomeItems, IComment } from "@/modules/entties";
-import { PageDescription, PageTitle } from "@/modules/shared";
+import { PageDescription, PageLayout, PageTitle } from "@/modules/shared";
 
 export function HomePage({ comments }: { comments: IComment[] }) {
     return (
-        <>
-            <PageTitle title={getHomePageData()?.description || ''} />
-            <PageDescription description={getHomePageData()?.task} size="lg" />
-            <PageDescription description={getHomePageData()?.taskDiscription} size="xs" />
+        <PageLayout type={UseDataTypeEnum.HOME}>
             <HomeItems comments={comments} />
-        </>
+        </PageLayout>
     );
 }

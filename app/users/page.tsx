@@ -2,9 +2,9 @@
 
 // ISR - гибрид: статика + обновление через revalidate
 
-import { UsersPage } from "@/modules/pages/users/UsersPage";
+import { UsersPage } from "@/modules/pages";
 
-export default async function Page() {
+export default async function Users() {
     const res = await fetch("https://jsonplaceholder.typicode.com/users", {
         next: { revalidate: 10 }, // 🔑 раз в 10 сек пересборка
     });
@@ -24,11 +24,5 @@ export default async function Page() {
 
 
 
-    return <div className="bg-primary/20 min-h-[92vh]  grid grid-rows-1 items-start justify-items-center  p-8 pb-20 gap-16 sm:p-20">
-        <main className="flex flex-col gap-5 row-start-2 items-center sm:items-start">
-            <UsersPage users={users} postsCounts={postsCounts} />
-
-        </main>
-
-    </div>;
+    return <UsersPage users={users} postsCounts={postsCounts} />;
 }

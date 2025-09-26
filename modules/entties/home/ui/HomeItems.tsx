@@ -7,7 +7,7 @@ export const HomeItems = ({ comments }: { comments: IComment[] }) => {
         <div className="grid grid-cols-3  gap-2 sm:flex-row">
             {
                 comments.map((comment: IComment) => (
-                    <HomeItemCard comment={comment} />
+                    <HomeItemCard key={`home-item-card-${comment.id}`} comment={comment} />
                 ))
             }
         </div>
