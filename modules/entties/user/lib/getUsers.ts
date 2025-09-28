@@ -1,4 +1,4 @@
-import { api } from "@/services/api";
+import { api } from "@/modules/shared/services";
 import { IUser } from "../type/user.type";
 
 export const getUsers = async (): Promise<IUser[]> => {

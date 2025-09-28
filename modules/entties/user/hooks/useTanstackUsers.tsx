@@ -1,4 +1,4 @@
-import { api } from "@/services/api";
+import { api } from "@/modules/shared/services";
 import { IUser } from "../type/user.type";
 import { useQuery } from "@tanstack/react-query";
 

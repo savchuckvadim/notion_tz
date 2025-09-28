@@ -33,7 +33,7 @@ export const StatisticsChart = ({
 
     ]
     return (
-        <Card>
+        <Card >
             <CardHeader>
                 <CardTitle>Статистика Пользователя</CardTitle>
                 < CardDescription > Посты, TODO, Комментарии</CardDescription>

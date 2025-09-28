@@ -1,5 +1,5 @@
 import { IPost } from "../type/posts.type";
-import { api } from "@/services/api";
+import { api } from "@/modules/shared/services";
 
 export const getPosts = async ({ cache }: { cache: boolean }): Promise<IPost[]> => {
     const posts = await api.getPosts() as IPost[];
