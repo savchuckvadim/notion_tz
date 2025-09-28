@@ -48,6 +48,15 @@ export const appRoutingDataItems: IAppDataItem[] = [
         image: "/images/dashboard.png",
         link: "/dashboard",
     },
+    {
+        title: "Tanstack Query",
+        description: "Tanstack Query page",
+        task: "CSR - данные только после загрузки React на клиенте",
+        taskDiscription: "TanStack Query сам кэширует результат и управляет refetch/инвалидированием. Сейчас данные перезапрашиваются после каждого возвращения на страницу. Данные о постах юзеров рекэшируются через каждые 10 секунд Tanstackuery + Promise.all()",
+        type: "CSR",
+        image: "/images/tanstack-bonus.png",
+        link: "/tanstack-bonus",
+    },
 ];
 
 
@@ -63,7 +72,9 @@ export const getUsersPageData = () => {
 export const getDashboardPageData = () => {
     return appRoutingDataItems.find((item) => item.link === "/dashboard");
 }
-
+export const getTanstackBonusPageData = () => {
+    return appRoutingDataItems.find((item) => item.link === "/tanstack-bonus");
+}
 export const getPageData = (link: string) => {
     return appRoutingDataItems.find((item) => item.link === link);
 }

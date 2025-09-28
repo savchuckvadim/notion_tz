@@ -15,7 +15,7 @@ export function setupPostsAppListener(
             const { dispatch, getState } = listenerApi;
             const state = getState() as RootState;
             const app = state.app;
-            debugger
+         
             if (app.isInitialized && !app.isLoading && app.currentUserId) {
                 dispatch(fetchPostsThunk(app.currentUserId));
             }

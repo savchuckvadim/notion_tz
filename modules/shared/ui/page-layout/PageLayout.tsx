@@ -18,7 +18,7 @@ export const PageLayout = ({
 }: IPageLayoutProps) => {
     const data = getData(type);
     return (
-        <div className="bg-primary/20 min-h-[92vh]  grid grid-rows-1 items-start justify-items-start  p-8 pb-20 gap-1 sm:p-20">
+        <div className="bg-primary/20 min-h-[90vh]  grid grid-rows-1 items-start justify-items-start  p-8 pb-20 gap-1 sm:p-20">
             <main className="flex flex-col gap-5 row-start-2 items-start sm:items-start">
                 <PageTitle title={title || data?.description || ''} />
                 <PageDescription description={task || data?.task} size="lg" />

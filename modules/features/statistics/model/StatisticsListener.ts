@@ -18,7 +18,7 @@ export const setupStatisticsListener = (listenerMiddleware: ListenerMiddlewareIn
             const posts = state.posts.posts;
             const todos = state.todos.todos;
             const statistics = getStatistics(posts, todos);
-            debugger;
+
             dispatch(
                 setStatistics(statistics)
             );

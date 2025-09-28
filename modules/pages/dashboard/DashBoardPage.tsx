@@ -4,7 +4,7 @@ import { PageLayout } from "@/modules/shared";
 import { useAppSelector } from "@/modules/app/model/hooks/redux";
 import { useCurrentUser } from "@/modules/entties/user/hooks/useCurrentUser";
 import { Profile } from "@/modules/widgetes";
-import { StatisticsDashBoard, StatisticsDashBoardCards } from "@/modules/features";
+import { StatisticsDashBoard } from "@/modules/features";
 
 export const DashBoardPage = () => {
     const statistics = useAppSelector((state) => state.statistics);

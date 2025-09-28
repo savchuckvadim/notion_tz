@@ -18,7 +18,7 @@ const statisticsSlice = createSlice({
     initialState,
     reducers: {
         setStatistics: (state: IStatisticsState, action: PayloadAction<IStatisticsState>) => {
-            debugger;
+
             state.posts = action.payload.posts;
             state.todos = action.payload.todos;
 

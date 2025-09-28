@@ -5,3 +5,4 @@ export * from "./lib/getUserById";
 export * from "./model/UserSlice";
 export * from "./model/UserThunk";
 export * from "./model/UserListener";
+export * from "./hooks/useTanstackUsers";

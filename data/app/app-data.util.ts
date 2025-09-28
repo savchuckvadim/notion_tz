@@ -1,4 +1,5 @@
 import { getDashboardPageData, getHomePageData, getPostsPageData, getUsersPageData } from "../app";
+import { getTanstackBonusPageData } from "./app-routing-data";
 
 
 export enum UseDataTypeEnum {
@@ -6,6 +7,7 @@ export enum UseDataTypeEnum {
     POSTS = "posts",
     DASHBOARD = "dashboard",
     HOME = "home",
+    TANSTACK_BONUS = "tanstack-bonus",
 }
 
 export const getData = (type: UseDataTypeEnum) => {
@@ -18,6 +20,8 @@ export const getData = (type: UseDataTypeEnum) => {
             return getDashboardPageData();
         case UseDataTypeEnum.HOME:
             return getHomePageData();
+        case UseDataTypeEnum.TANSTACK_BONUS:
+            return getTanstackBonusPageData();
         default:
             return null;
     }
