@@ -8,11 +8,11 @@ export interface IUseTanstackUsers {
     isLoading: boolean;
     isError: boolean;
 }
-export const useTanstackUsers = (): IUseTanstackUsers => {
+export const useTanstackUsers = () => {
     const { data, isLoading, isError } = useQuery({
         queryKey: ["users"],
-        queryFn: api.getUsers,
+        queryFn: async () => await api.getUsers(),
     });
-    debugger;
+
     return { data: data || [], isLoading, isError };
 }

@@ -1,9 +1,8 @@
 "use client";
 
 import { UseDataTypeEnum } from "@/data";
-import { useTanstackUsers } from "@/modules/entties";
+import { Users, useTanstackUsers } from "@/modules/entties";
 import { useUsersPostsCounts } from "@/modules/features/";
-import { UsersPage } from "@/modules/pages";
 import { PageLayout } from "@/modules/shared";
 
 
@@ -20,7 +19,7 @@ export default function TanstackPage() {
     return (
 
         <PageLayout type={UseDataTypeEnum.TANSTACK_BONUS}>
-            <UsersPage users={users} postsCounts={postsCounts.data} />
+            <Users users={users} postsCounts={postsCounts.data} />
         </PageLayout>
 
     );
