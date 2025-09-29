@@ -14,7 +14,7 @@ export const setupStatisticsListener = (listenerMiddleware: ListenerMiddlewareIn
         effect: async (action, listenerApi) => {
             const { dispatch, getState } = listenerApi;
             const state = getState() as RootState;
-            const user = state.user.current;
+       
             const posts = state.posts.posts;
             const todos = state.todos.todos;
             const statistics = getStatistics(posts, todos);

@@ -7,7 +7,7 @@ import { useInClient } from "@/modules/shared/is-client/useInClient";
 import TanstackQueryProvider from "./TanstackQueryProvider";
 
 export function AppProvider({ children }: { children: React.ReactNode }) {
-    const isClient = useInClient();
+
     return (
         <TanstackQueryProvider>
             <Provider store={store}>

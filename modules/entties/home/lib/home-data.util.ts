@@ -1,7 +1,7 @@
+import { api } from "@/modules/shared";
 import { IComment } from "../type/home.type";
 
 export const getHomeData = async (): Promise<IComment[]> => {
-    const res = await fetch("https://jsonplaceholder.typicode.com/comments");
-    const comments = (await res.json()) as IComment[];
+    const comments = (await api.getComments()) as IComment[];
     return comments;
 }

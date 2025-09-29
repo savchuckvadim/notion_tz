@@ -34,7 +34,7 @@ export const appRoutingDataItems: IAppDataItem[] = [
         title: "Users",
         description: "Users page",
         task: "Users page - ISR - гибрид: статика + обновление через revalidate",
-        taskDiscription: "Users page - ISR - гибрид: статика + обновление через revalidate",
+        taskDiscription: "Users page - ISR - гибрид: статика + обновление через revalidate, на странице пользователя есть форма с добавлением поста.",
         type: "ISR",
         image: "/images/users.png",
         link: "/users",

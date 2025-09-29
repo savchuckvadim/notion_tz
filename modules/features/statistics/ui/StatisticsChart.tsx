@@ -2,8 +2,6 @@
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/modules/shared/shadcn";
 import { ChartConfig, ChartContainer, ChartTooltip } from "@/modules/shared/shadcn/components/ui/chart";
 import { ChartTooltipContent } from "@/modules/shared/shadcn/components/ui/chart";
-
-
 import { TrendingUp } from "lucide-react"
 import { Bar, BarChart, CartesianGrid, XAxis } from "recharts"
 

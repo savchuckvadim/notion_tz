@@ -1,7 +1,4 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { fetchPostsThunk } from "@/modules/entties/posts/model/PostsThunk";
-import { fetchTodosThunk } from "@/modules/entties/todos/model/TodosThunk";
-import { getStatistics } from "../lib/getStatistics";
 
 const initialState: IStatisticsState = {
     posts: 0,

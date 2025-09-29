@@ -1,6 +1,6 @@
-import { appData, getHomePageData, UseDataTypeEnum } from "@/data";
+import { UseDataTypeEnum } from "@/data";
 import { HomeItems, IComment } from "@/modules/entties";
-import { PageDescription, PageLayout, PageTitle } from "@/modules/shared";
+import { PageLayout } from "@/modules/shared";
 
 export function HomePage({ comments }: { comments: IComment[] }) {
     return (

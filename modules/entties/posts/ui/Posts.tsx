@@ -1,4 +1,3 @@
-
 import { IPost } from "@/modules/entties/posts/type/posts.type"
 import { SimpleCard } from "@/modules/shared"
 

@@ -1,5 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { getPostsByUserId } from "../lib/getPosts";
+import { getPostsByUserId} from "../lib/getPosts";
+
 
 export const fetchPostsThunk = createAsyncThunk(
     "posts/fetchPosts",
@@ -7,3 +8,5 @@ export const fetchPostsThunk = createAsyncThunk(
         const result = await getPostsByUserId(userId);
         return result;
     });
+
+

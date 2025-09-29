@@ -1,4 +1,4 @@
-
+"use client"
 import { useQuery } from "@tanstack/react-query";
 import { IUser } from "@/modules/entties";
 import { IUsersPostsCount } from "../type/posts.type";
@@ -11,7 +11,7 @@ export interface IUseUsersPostsCounts {
 }
 export const useUsersPostsCounts = (users: IUser[]): IUseUsersPostsCounts => {
     const { data, isLoading, isError } = useQuery<IUsersPostsCount[]>({
-     
+
         queryKey: ["usersPostsCounts"],
         queryFn: () => getPostsByUsers(users),
         enabled: true,

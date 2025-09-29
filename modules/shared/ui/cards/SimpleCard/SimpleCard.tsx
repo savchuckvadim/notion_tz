@@ -8,6 +8,7 @@ import { useState } from 'react';
 
 export interface SimpleCardProps {
     title?: string;
+    header?: React.ReactNode;
     description?: string;
     children: React.ReactNode;
     withCollapse?: boolean;
@@ -17,6 +18,7 @@ export interface SimpleCardProps {
 
 export const SimpleCard = ({
     title,
+    header,
     description,
     children,
     withCollapse,
@@ -39,8 +41,9 @@ export const SimpleCard = ({
                     onClick={withCollapse ? handleToggleCollapse : undefined}
                 >
                     <div className="flex items-center justify-between">
-                        <div>
-                            {title && <div className="mb-3"> <CardTitle>{title}</CardTitle>  </div>}
+                        <div className="min-w-full">
+                            {title && !header && <div className="mb-3"> <CardTitle>{title}</CardTitle>  </div>}
+                            {!title && header && <div className="mb-3 min-w-full"> {header}  </div>}
                             {description && <p>{description}</p>}
                         </div>
                         {withCollapse && (

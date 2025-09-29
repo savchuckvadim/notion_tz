@@ -42,16 +42,16 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
     }, [scheme, theme, isMounted]);
 
     return (
-        // <NextThemesProvider
-        //     attribute="class"
-        //     defaultTheme="light"
-        //     enableSystem
-        //     disableTransitionOnChange
-        //     enableColorScheme
-        // >
+        <NextThemesProvider
+          
+            defaultTheme="default"
+            enableSystem
+            disableTransitionOnChange
+            enableColorScheme
+        >
             <ColorContext.Provider value={{ scheme, setScheme }}>
                 {children}
             </ColorContext.Provider>
-        // </NextThemesProvider>
+        </NextThemesProvider>
     );
 };

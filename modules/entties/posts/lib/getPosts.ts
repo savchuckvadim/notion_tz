@@ -2,9 +2,10 @@ import { IPost } from "../type/posts.type";
 import { api } from "@/modules/shared/services";
 
 export const getPosts = async ({ cache }: { cache: boolean }): Promise<IPost[]> => {
-    const posts = await api.getPosts() as IPost[];
+    const posts = await api.getPosts(cache) as IPost[];
     return posts;
 }
+
 
 
 export const getPostsByUserId = async (userId: number): Promise<IPost[]> => {
@@ -12,3 +13,7 @@ export const getPostsByUserId = async (userId: number): Promise<IPost[]> => {
     return posts;
 }
 
+export const sendPost = async (post: Partial<IPost>): Promise<{id: number}> => {
+    const result = await api.sendPost(post);
+    return result;
+}

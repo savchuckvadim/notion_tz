@@ -6,7 +6,7 @@ export const getPostsByUsers = async (users: IUser[]): Promise<IUsersPostsCount[
         users.map(async (user: any) => {
 
             const posts = await getPostsByUserId(user.id);
-            return { userId: user.id, count: posts.length };
+            return { userId: user.id, userName: user.name, count: posts.length };
         })
     );
     return postsCounts;
