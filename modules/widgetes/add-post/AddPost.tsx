@@ -1,21 +1,16 @@
 "use client"
 import { AddPostInitButton, AddPostModal } from "@/modules/features"
 import { PageTitle } from "@/modules/shared"
-import { useEffect, useState } from "react"
+import { SetStateAction, Dispatch, useState } from "react"
 import { IPost } from "@/modules/entties/posts/type/posts.type"
 
-export const AddPost = ({ posts }: { posts: IPost[] }) => {
+export const AddPost = ({ posts, setAllPosts }: { posts: IPost[], setAllPosts: Dispatch<SetStateAction<IPost[]>>}) => {
     const [showAddPost, setShowAddPost] = useState(false)
-    const [allPosts, setAllPosts] = useState(posts)
-    useEffect(() => {
-        setAllPosts(posts)
-    }, [posts])
-
-
+ 
     return (
         <>
             <div className="my-4 flex flex-row items-center justify-between">
-                <PageTitle title={`Posts: ${allPosts.length}`} />
+                <PageTitle title={`Posts: ${posts.length}`} />
                 <div>
                     <AddPostInitButton showAddPost={showAddPost} setShowAddPost={setShowAddPost} />
                 </div>

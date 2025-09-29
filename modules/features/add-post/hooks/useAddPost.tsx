@@ -49,9 +49,7 @@ export const useAddPost = (onSend: (post: IPost) => void) => {
         userId,
     })
 
-    useEffect(() => {
-        console.log(state)
-    }, [state])
+
 
 
     return {

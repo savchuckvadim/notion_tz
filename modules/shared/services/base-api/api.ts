@@ -6,7 +6,7 @@ class Api {
 
     public async getUsers(): Promise<IUser[] | null> {
         const res = await fetch(`${this.baseUrl}/users`);
-        debugger;
+
         if (!res.ok) throw new Error("Ошибка загрузки");
         return res.json() as Promise<IUser[]>;
     }
@@ -33,7 +33,7 @@ class Api {
         return res.json();
     }
 
-    public async sendPost(post: Partial<IPost>): Promise<{id: number}> {
+    public async sendPost(post: Partial<IPost>): Promise<{ id: number }> {
         const res = await fetch(`${this.baseUrl}/posts`, {
             method: "POST",
             body: JSON.stringify(post),

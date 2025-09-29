@@ -13,7 +13,7 @@ export const UserPage = ({ user, posts }: { user: IUser, posts: IPost[] }) => {
     useEffect(() => {
         setAllPosts(posts)
     }, [posts])
-
+    
     return (
         <PageLayout
             type={UseDataTypeEnum.USERS}
@@ -23,6 +23,7 @@ export const UserPage = ({ user, posts }: { user: IUser, posts: IPost[] }) => {
         >
             <AddPost
                 posts={allPosts}
+                setAllPosts={setAllPosts}
             />
             <UserPosts
                 allPosts={allPosts}

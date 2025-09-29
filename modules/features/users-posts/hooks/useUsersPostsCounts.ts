@@ -11,7 +11,7 @@ export interface IUseUsersPostsCounts {
 }
 export const useUsersPostsCounts = (users: IUser[]): IUseUsersPostsCounts => {
     const { data, isLoading, isError } = useQuery<IUsersPostsCount[]>({
-
+        refetchInterval: 10000,
         queryKey: ["usersPostsCounts"],
         queryFn: () => getPostsByUsers(users),
         enabled: true,
